@@ -9,6 +9,10 @@
   "categories": [
     "Snippets"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marci1175/ryzex-api-extension"
+  },
   "icon": "icon.png",
   "contributes": {
     "snippets": [
