@@ -1,8 +1,23 @@
 {
+    "Aimbot" : {
+        "description": "Lists",
+        "prefix": "aimbot.hitselection.hitchance : Float",
+        "body": [
+            "aimbot.hitselection.hitchance()",
+        ]
+    },
     "Connection" : {
+        "description": "Lists the connected clients steam_id into an array of strings",
         "prefix": "connection.listclients : Array[String] ",
-        "body":[
+        "body": [
             "connection.listclients()",  
-    ]   
+        ]   
+    },
+    "Time" : {
+        "description": "Inserts time",
+        "prefix": "Currtime",
+        "body": [
+            "'$CURRENT_YEAR $CURRENT_MONTH $CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND'",
+        ]
     }
 }
