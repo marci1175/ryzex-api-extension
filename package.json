@@ -1,0 +1,21 @@
+{
+  "name": "ryzex-api",
+  "displayName": "RyzeX api",
+  "description": "Made to help the developers for RyzeX ",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "icon": "icon.png",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "lua",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}
