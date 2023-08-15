@@ -643,14 +643,14 @@
             ":combo:Get()",
             ":colorpicker:Get()",
         ],
-        "body": "${1:(Variable containing the widget)}:Get()",
+        "body": "${1}:Get()",
     },
     "Returns Data from widget for MultiCombo" : {
         "description": "Returns Data from widget",
         "prefix": [
             ":multicombo:Get()"
         ],
-        "body": "${1:(Variable containing the widget)}:Get(${2:Element})",
+        "body": "${1}:Get(${2:Element})",
     },
     //attributes : retardation incoming
     "Set checkbox state" : {
@@ -658,47 +658,52 @@
         "prefix": [
             ":checkbox:Set()"
         ],
-        "body": "${1:(Variable containing the widget)}:Set(${2:Bool})",
+        "body": "${1}:Set(${2:Bool})",
+    },
+    "test" : {
+        "description": "dets",
+        "prefix": "test",
+        "body": "asfasdf ${1} asddfsd"
     },
     "Set slider value" : {
         "description": "Set slider value",
         "prefix": [
             ":slider:Set()"
         ],
-        "body": "${1:(Variable containing the widget)}:Set(${2:Value})",
+        "body": "${1}:Set(${2:Value})",
     },
     "Set keybind value" : {
         "description": "Set keybind value",
         "prefix": [
             ":slider:Set()"
         ],
-        "body": "${1:(Variable containing the widget)}:Set(${2:VK (Virtual key)})",
+        "body": "${1}:Set(${2:VK (Virtual key)})",
     },
     "Set combo value" : {
         "description": "Set combo value",
         "prefix": [
             ":combo:Set()"
         ],
-        "body": "${1:(Variable containing the widget)}:Set(${22:Value})",
+        "body": "${1}:Set(${22:Value})",
     },
     "Set multicombo value" : {
         "description": "Set multicombo value",
         "prefix": [
             ":multicombo:Set()"
         ],
-        "body": "${1:(Variable containing the widget)}:Set(${2:Element}, ${3:Value})",
+        "body": "${1}:Set(${2:Element}, ${3:Value})",
     },
     "Set colorpicker value" : {
         "description": "Set colorpicker value",
         "prefix": [
             ":colorpicker:Set()"
         ],
-        "body": "${1:(Variable containing the widget)}:Set(${2:Color})",
+        "body": "${1}:Set(${2:Color})",
     },
     "Sets function for button" : {
         "description": "Sets function for button",
         "prefix": ":button:SetFunction(function)",
-        "body": "${1:(Variable containing the widget)}:SetFunction(${2:function})"
+        "body": "${1}:SetFunction(${2:function})"
     },
     //slider stuff
     "Returns slider minvalue" : {
@@ -706,42 +711,42 @@
         "prefix": [
             ":slider:GetMin()"
         ],
-        "body": "${1:(Variable containing the widget)}:GetMin()",
+        "body": "${1}:GetMin()",
     },
     "Set slider minvalue" : {
         "description": "Set slider minvalue",
         "prefix": [
             ":slider:SetMin(value)"
         ],
-        "body": "${1:(Variable containing the widget)}:SetMin(${2:Value})",
+        "body": "${1}:SetMin(${2:Value})",
     },
     "Returns slider maxvalue" : {
         "description": "Returns slider maxvalue",
         "prefix": [
             ":slider:GetMax()"
         ],
-        "body": "${1:(Variable containing the widget)}:GetMax()",
+        "body": "${1}:GetMax()",
     },
     "Set slider maxvalue" : {
         "description": "Set slider maxvalue",
         "prefix": [
             ":slider:SetMax(value)"
         ],
-        "body": "${1:(Variable containing the widget)}:SetMax(${2:Value})",
+        "body": "${1}:SetMax(${2:Value})",
     }, 
     "Returns slider GetFormat()" : {
         "description": "Returns slider GetFormat()",
         "prefix": [
             ":slider:GetFormat()"
         ],
-        "body": "${1:(Variable containing the widget)}:GetFormat()",
+        "body": "${1}:GetFormat()",
     }, 
     "Set slider format" : {
         "description": "Set slider format",
         "prefix": [
             ":slider:SetFromat()"
         ],
-        "body": "${1:(Variable containing the widget)}:SetFormat(${2:format})",
+        "body": "${1}:SetFormat(${2:format})",
     }, 
     //multicombo stuff
     "Get by label multicombo" : {
@@ -749,14 +754,14 @@
         "prefix": [
             ":multicombo:GetByLabel('label')"
         ],
-        "body": "${1:(Variable containing the widget)}:GetByLabel('${2:label}')",
+        "body": "${1}:GetByLabel('${2:label}')",
     }, 
     "Set by label multicombo" : {
         "description": "Set by label multicombo",
         "prefix": [
             ":multicombo:SetByLabel('label', value)"
         ],
-        "body": "${1:(Variable containing the widget)}:SetByLabel('${2:label}', ${3:Value})",
+        "body": "${1}:SetByLabel('${2:label}', ${3:Value})",
     }, 
     //Convars
     "Find a variable" : {
