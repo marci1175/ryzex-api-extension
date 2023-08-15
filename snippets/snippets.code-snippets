@@ -107,24 +107,28 @@
         "description": "List callbacks",
         "prefix": "eListCallbacks",
         "body": [
+            "--[[",
             "Unload",
             "Draw",
             "Pre-Prediction   (return usercmd in the function argument)",
             "Prediction       (return usercmd in the function argument)",
             "Createmove       (return usercmd in the function argument)",
             "FrameStageNotify (returns current stage in the function argument)",
+            "]]--",
         ]
     },
     "List GameEvent callbacks" : {
         "description": "List GameEvent callbacks",
         "prefix": "eListGameEventCallbacks",
         "body": [
+            "--[[",
             "player_hurt",
             "player_death",
             "bullet_impact",
             "weapon_fire",
             "round_start",
             "item_purchase",
+            "]]--",
         ]
     },
     //config
