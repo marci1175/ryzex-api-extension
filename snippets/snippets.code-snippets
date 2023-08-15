@@ -10,9 +10,19 @@
             "'$CURRENT_YEAR $CURRENT_MONTH $CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND'",
         ]
     },
+    "Returns Menu.IsOpened()" : {
+        "description": "Returns Menu.IsOpened()",
+        "prefix": "Menu.IsOpened()",
+        "body": "Menu.IsOpened()",
+    },
+    "Creates a colorpicker : Color" : {
+        "description": "Creates a button which returns it state",
+        "prefix": "AddColorPicker()",
+        "body": "Menu.AddColorPicker()",
+    },
     "Creates a button which returns it state : BOOL" : {
         "description": "Creates a button which returns it state",
-        "prefix": "",
+        "prefix": "AddButton()",
         "body": "Menu.AddButton('${1:Label}', ${2:Function})",
     },
     "Adds a checkbox interface to menu : BOOL " : {
@@ -87,11 +97,749 @@
         "prefix": "OnFrameStageNotify()",
         "body": ["function OnFrameStageNotify()","${1}","end"]
     },
+    //callbacks
     "Makes a callback" : {
         "description": "Makes a callback",
-        "prefix": "Callbacks",
-        "body": "Callbacks.Add('${1:Name}',${1:FunctionName})",
-    }
+        "prefix": "Callbacks.Add()",
+        "body": "Callbacks.Add('${1:Name}',${2:FunctionName})",
+    },
+    "List callbacks" : {
+        "description": "List callbacks",
+        "prefix": "eListCallbacks",
+        "body": [
+            "Unload",
+            "Draw",
+            "Pre-Prediction   (return usercmd in the function argument)",
+            "Prediction       (return usercmd in the function argument)",
+            "Createmove       (return usercmd in the function argument)",
+            "FrameStageNotify (returns current stage in the function argument)",
+        ]
+    },
+    "List GameEvent callbacks" : {
+        "description": "List GameEvent callbacks",
+        "prefix": "eListGameEventCallbacks",
+        "body": [
+            "player_hurt",
+            "player_death",
+            "bullet_impact",
+            "weapon_fire",
+            "round_start",
+            "item_purchase",
+        ]
+    },
+    //config
     
 
+
+
+
+
+
+
+
+
+
+
+    "Returns Command number" : {
+        "description": "Returns Command number",
+        "prefix": "CUserCmd:iCommandNumber",
+        "body": "CUserCmd:iCommandNumber",
+    },
+    "Returns tickcount" : {
+        "description": "Returns tickcount",
+        "prefix": "CUserCmd:iTickCount",
+        "body": "CUserCmd:iTickCount",
+    },
+    "Returns angViewPoint" : {
+        "description": "Returns angViewPoint",
+        "prefix": "CUserCmd:angViewPoint",
+        "body": "CUserCmd:angViewPoint",
+    },
+    "Returns vecAimDirection" : {
+        "description": "Returns vecAimDirection",
+        "prefix": "CUserCmd:vecAimDirection",
+        "body": "CUserCmd:vecAimDirection",
+    },
+    
+    "Returns flForwardMove" : {
+        "description": "Returns flForwardMove",
+        "prefix": "CUserCmd:flForwardMove",
+        "body": "CUserCmd:flForwardMove",
+    },
+    
+    "Returns flSideMove" : {
+        "description": "Returns flSideMove",
+        "prefix": "CUserCmd:flSideMove",
+        "body": "CUserCmd:flSideMove",
+    },
+    
+    "Returns flUpMove" : {
+        "description": "Returns flUpMove",
+        "prefix": "CUserCmd:flUpMove",
+        "body": "CUserCmd:flUpMove",
+    },
+    
+    "Returns iButtons" : {
+        "description": "Returns Command number int",
+        "prefix": "CUserCmd:iButtons",
+        "body": "CUserCmd:iButtons",
+    },
+    
+    "Returns uImpulse" : {
+        "description": "Returns uImpulse",
+        "prefix": "CUserCmd:uImpulse",
+        "body": "CUserCmd:uImpulse",
+    },
+    
+    "Returns iWeaponSelect" : {
+        "description": "Returns iWeaponSelect",
+        "prefix": "CUserCmd:iWeaponSelect",
+        "body": "CUserCmd:iWeaponSelect",
+    },
+    
+    "Returns iWeaponSubType" : {
+        "description": "Returns iWeaponSubType",
+        "prefix": "CUserCmd:iWeaponSubType",
+        "body": "CUserCmd:iWeaponSubType",
+    },
+    
+    "Returns iRandomSeed" : {
+        "description": "Returns iRandomSeed",
+        "prefix": "CUserCmd:iRandomSeed",
+        "body": "CUserCmd:iRandomSeed",
+    },
+    
+    "Returns sMouseDeltaX" : {
+        "description": "Returns sMouseDeltaX",
+        "prefix": "CUserCmd:sMouseDeltaX",
+        "body": "CUserCmd:sMouseDeltaX",
+    },
+    
+    "Returns sMouseDeltaY" : {
+        "description": "Returns sMouseDeltaY",
+        "prefix": "CUserCmd:sMouseDeltaY",
+        "body": "CUserCmd:sMouseDeltaY",
+    },
+    
+    "Returns bHasBeenPredicted" : {
+        "description": "Returns bHasBeenPredicted",
+        "prefix": "CUserCmd:bHasBeenPredicted",
+        "body": "CUserCmd:bHasBeenPredicted",
+    },
+    
+    "Returns vecHeadAngles" : {
+        "description": "Returns vecHeadAngles",
+        "prefix": "CUserCmd:vecHeadAngles",
+        "body": "CUserCmd:vecHeadAngles",
+    },
+
+    "Returns realtime" : {
+        "description": "Returns realtime",
+        "prefix": "GlobalVars.GetRealtime()",
+        "body": "GlobalVars.GetRealtime()",
+    },
+    //global vars
+    "Returns Frame Count" : {
+        "description": "Returns Frame Count",
+        "prefix": "GlobalVars.GetFrameCount()",
+        "body": "GlobalVars.GetFrameCount()",
+    },
+    "Returns AbsFrametime" : {
+        "description": "Returns AbsFrametime",
+        "prefix": "GlobalVars.GetAbsFrametime()",
+        "body": "GlobalVars.GetAbsFrametime()",
+    },
+    "Returns GetCurtime" : {
+        "description": "Returns GetCurtime",
+        "prefix": "GlobalVars.GetCurtime()",
+        "body": "GlobalVars.GetCurtime()",
+    },
+    "Returns GetFrametime" : {
+        "description": "Returns GetFrametime",
+        "prefix": "GlobalVars.GetFrametime()",
+        "body": "GlobalVars.GetFrametime()",
+    },
+    "Returns GetTickcount" : {
+        "description": "Returns GetTickcount",
+        "prefix": "GlobalVars.GetTickcount()",
+        "body": "GlobalVars.GetTickcount()",
+    },
+    "Returns GetIntervalPerTick" : {
+        "description": "Returns GetIntervalPerTick",
+        "prefix": "GlobalVars.GetIntervalPerTick()",
+        "body": "GlobalVars.GetIntervalPerTick()",
+    },
+    "Returns GetInterpolationAmount" : {
+        "description": "Returns GetInterpolationAmount",
+        "prefix": "GlobalVars.GetInterpolationAmount()",
+        "body": "GlobalVars.GetInterpolationAmount()",
+    },
+    //clientstate
+    "Returns GetLastOutgoingCommand" : {
+        "description": "Returns GetLastOutgoingCommand",
+        "prefix": "ClientState.GetLastOutgoingCommand()",
+        "body": "ClientState.GetLastOutgoingCommand()",
+    },
+    "Returns GetChokedCommands" : {
+        "description": "Returns GetChokedCommands",
+        "prefix": "ClientState.GetChokedCommands()",
+        "body": "ClientState.GetChokedCommands()",
+    },
+    "Returns GetLastCommandAck" : {
+        "description": "Returns GetLastCommandAck",
+        "prefix": "ClientState.GetLastCommandAck()",
+        "body": "ClientState.GetLastCommandAck()",
+    },
+    "Returns GetCommandAck" : {
+        "description": "Returns GetCommandAck",
+        "prefix": "ClientState.GetCommandAck()",
+        "body": "ClientState.GetCommandAck()",
+    },
+    //engine
+    "Returns GetViewAngles" : {
+        "description": "Returns GetViewAngles",
+        "prefix": "Engine.GetViewAngles()",
+        "body": "Engine.GetViewAngles()",
+    },
+    "Returns SetViewAngles" : {
+        "description": "Returns SetViewAngles",
+        "prefix": "Engine.SetViewAngles()",
+        "body": "Engine.SetViewAngles(${1:Vec3})",
+    },
+    "Returns ExecuteClientCmd" : {
+        "description": "Returns ExecuteClientCmd",
+        "prefix": "Engine.ExecuteClientCmd()",
+        "body": "Engine.ExecuteClientCmd(${1:Command})",
+    },
+
+    "Returns GetNetChannelInfo" : {
+        "description": "Returns GetNetChannelInfo",
+        "prefix": "Engine.GetNetChannelInfo()",
+        "body": "Engine.GetNetChannelInfo()",
+    },
+
+    "Returns GetPlayerInfo" : {
+        "description": "Returns GetPlayerInfo",
+        "prefix": "Engine.GetPlayerInfo()",
+        "body": "Engine.GetPlayerInfo(${1:entityIndex})",
+    },
+
+    "Returns GetLocalPlayer" : {
+        "description": "Returns GetLocalPlayer",
+        "prefix": "Engine.GetLocalPlayer()",
+        "body": "Engine.GetLocalPlayer()",
+    },
+
+    "Returns GetPlayerForUserID" : {
+        "description": "Returns GetPlayerForUserID",
+        "prefix": "Engine.GetPlayerForUserID()",
+        "body": "Engine.GetPlayerForUserID(${1:userID})",
+    },
+
+    "Returns IsInGame" : {
+        "description": "Returns IsInGame",
+        "prefix": "Engine.IsInGame()",
+        "body": "Engine.IsInGame()",
+    },
+
+    "Returns IsConnected" : {
+        "description": "Returns IsConnected",
+        "prefix": "Engine.IsConnected()",
+        "body": "Engine.IsConnected()",
+    },
+
+    "Returns IsVoiceRecording" : {
+        "description": "Returns IsVoiceRecording",
+        "prefix": "Engine.IsVoiceRecording()",
+        "body": "Engine.IsVoiceRecording()",
+    },
+
+    //Inetchannelinfo
+    "Returns INetChannelInfo:GetAddress" : {
+        "description": "Returns GetAddress",
+        "prefix": "INetChannelInfo:GetAddress()",
+        "body": "INetChannelInfo:GetAddress()",
+    },
+    "Returns IsLoopback" : {
+        "description": "Returns IsLoopback",
+        "prefix": "INetChannelInfo:IsLoopback",
+        "body": "INetChannelInfo:IsLoopback",
+    },
+    "Returns IsTimingOut" : {
+        "description": "Returns IsTimingOut",
+        "prefix": "INetChannelInfo:IsTimingOut",
+        "body": "INetChannelInfo:IsTimingOut",
+    },
+    "Returns IsPlayback" : {
+        "description": "Returns IsPlayback",
+        "prefix": "INetChannelInfo:IsPlayback()",
+        "body": "INetChannelInfo:IsPlayback()",
+    },
+    "Returns GetLatency" : {
+        "description": "Returns GetLatency",
+        "prefix": "INetChannelInfo:GetLatency()",
+        "body": "INetChannelInfo:GetLatency(${1:flow})",
+    },
+    "Returns GetAvgLatency" : {
+        "description": "Returns GetAvgLatency",
+        "prefix": "INetChannelInfo:GetAvgLatency()",
+        "body": "INetChannelInfo:GetAvgLatency(${1:flow})",
+    },
+    "Returns GetAvgLoss" : {
+        "description": "Returns GetAvgLoss",
+        "prefix": "INetChannelInfo:GetAvgLoss()",
+        "body": "INetChannelInfo:GetAvgLoss(${1:flow})",
+    },
+    "Returns GetAvgChoke" : {
+        "description": "Returns GetAvgChoke",
+        "prefix": "INetChannelInfo:GetAvgChoke()",
+        "body": "INetChannelInfo:GetAvgChoke(${1:flow})",
+    },
+    "Shows flow types" : {
+        "description": "Shows flow types",
+        "prefix": "eFlowtypes",
+        "body": [
+            "--[[",
+            "FLOW_OUTGOING 0",
+            "FLOW_INCOMING 1",
+            "MAX_FLOWS 2",
+            "]]--"
+        ]
+    },
+    //playerinfo
+    "Returns steamId64" : {
+        "description": "Returns steamId64",
+        "prefix": "PlayerInfo.steamId64",
+        "body": "PlayerInfo.steamId64",
+    },
+    "Returns name" : {
+        "description": "Returns name",
+        "prefix": "PlayerInfo.name",
+        "body": "PlayerInfo.name",
+    },
+    "Returns userid" : {
+        "description": "Returns userid",
+        "prefix": "PlayerInfo.userid",
+        "body": "PlayerInfo.userid",
+    },
+    "Returns szSteamId" : {
+        "description": "Returns szSteamId",
+        "prefix": "PlayerInfo.szSteamId",
+        "body": "PlayerInfo.szSteamId",
+    },
+    "Returns bot" : {
+        "description": "Returns bot",
+        "prefix": "PlayerInfo.bot",
+        "body": "PlayerInfo.bot",
+    },
+    //render
+    "Draws DrawFilledRect" : {
+        "description": "Draws DrawFilledRect",
+        "prefix": "Render.DrawFilledRect(Vector2D position, Vector2D size, Color color)",
+        "body": "Render.DrawFilledRect(${1:Position}, ${2:Size}, ${3:(255,255,255,255)})",
+    },
+    "Draws DrawOutlinedRect" : {
+        "description": "Draws DrawOutlinedRect",
+        "prefix": "Render.DrawOutlinedRect(Vector2D position, Vector2D size, Color color)",
+        "body": "PlayerInfo.DrawOutlinedRect(${1:Position}, ${2:Size}, ${3:(255,255,255,255)})",
+    },
+    "Draws DrawLine" : {
+        "description": "Draws DrawLine",
+        "prefix": "Render.DrawLine(Vector2D from, Vector2D to, Color color))",
+        "body": "PlayerInfo.DrawLine(${1:From}, ${2:To}, ${3:(255,255,255,255)})",
+    },
+    "Draws DrawString" : {
+        "description": "Draws DrawString",
+        "prefix": "Render.DrawString(Vector2D position, bool shouldCenter, 'Text')",
+        "body": "PlayerInfo.DrawString(${1:Position}, ${2:Shouldcenter (bool) }, ${3:Text})",
+    },
+    //print
+    "Prints to console" : {
+        "description": "Prints to console",
+        "prefix": "Print.PrintToConsole('Hello world!')",
+        "body": "Print.PrintToConsole(${1:Text})",
+    },
+    //netvars
+    "Finds offset" : {
+        "description": "Finds offset",
+        "prefix": "Netvars.FindOffset('CBaseEntity->m_flSimulationTime')",
+        "body": "Netvars.FindOffset(${1:Object} -> ${2:Module})",
+    },
+    //EntityList
+    "Returns CEntity" : {
+        "description": "Returns CEntity",
+        "prefix": "EntityList.GetClientEntity(entityIndex)",
+        "body": "EntityList.GetClientEntity(${1:EntityIndex})",
+    },
+    "Returns GetClientEntityFromHandle" : {
+        "description": "Returns CEntity",
+        "prefix": "EntityList.GetClientEntityFromHandle(Handle)",
+        "body": "EntityList.GetClientEntityFromHandle(${1:Handle})",
+    },
+    "Returns GetHighestEntityIndex" : {
+        "description": "Returns GetHighestEntityIndex",
+        "prefix": "EntityList.GetHighestEntityIndex()",
+        "body": "EntityList.GetHighestEntityIndex()",
+    },
+    //CEntity
+    "Returns ToPlayer" : {
+        "description": "Returns ToPlayer",
+        "prefix": "CEntity:ToPlayer()",
+        "body": "CEntity:ToPlayer()",
+    },
+    "Returns GetAddress" : {
+        "description": "Returns GetAddress",
+        "prefix": "CEntity:GetAddress",
+        "body": "CEntity:GetAddress",
+    },
+    "Returns GetIndex" : {
+        "description": "Returns GetIndex",
+        "prefix": "CEntity:GetIndex",
+        "body": "CEntity:GetIndex",
+    },
+    "Returns IsDormant" : {
+        "description": "Returns IsDormant",
+        "prefix": "CEntity:IsDormant",
+        "body": "CEntity:IsDormant",
+    },
+    "Returns GetPropInt" : {
+        "description": "Returns GetPropInt",
+        "prefix": "CEntity:GetPropInt(netvar/offset)",
+        "body": "CEntity:GetPropInt(${1:Netvar/Offset})",
+    },
+    "Returns GetPropFloat" : {
+        "description": "Returns GetPropFloat",
+        "prefix": "CEntity:GetPropFloat(netvar/offset)",
+        "body": "CEntity:GetPropFloat(${1:Netvar/Offset})",
+    },
+    "Returns GetPropShort" : {
+        "description": "Returns GetPropShort",
+        "prefix": "CEntity:GetPropShort(netvar/offset)",
+        "body": "CEntity:GetPropShort(${1:Netvar/Offset})",
+    },
+    "Returns GetPropDouble" : {
+        "description": "Returns GetPropDouble",
+        "prefix": "CEntity:GetPropDouble(netvar/offset)",
+        "body": "CEntity:GetPropDouble(${1:Netvar/Offset})",
+    },
+    "Returns GetPropBool" : {
+        "description": "Returns GetPropBool",
+        "prefix": "CEntity:GetPropBool(netvar/offset)",
+        "body": "CEntity:GetPropBool(${1:Netvar/Offset})",
+    },
+    "Returns GetPropVector" : {
+        "description": "Returns GetPropVector",
+        "prefix": "CEntity:GetPropVector(netvar/offset)",
+        "body": "CEntity:GetPropVector(${1:Netvar/Offset})",
+    },
+    "Sets SetPropInt" : {
+        "description": "Sets SetPropInt",
+        "prefix": "CEntity:SetPropInt(netvar/offset, value)",
+        "body": "CEntity:SetPropInt(${1:Netvar/Offset}, ${2:Value})",
+    },
+    "Sets SetPropFloat" : {
+        "description": "Sets SetPropFloat",
+        "prefix": "CEntity:SetPropFloat(netvar/offset, value)",
+        "body": "CEntity:SetPropFloat(${1:Netvar/Offset}, ${2:Value})",
+    },
+    "Sets SetPropShort" : {
+        "description": "Sets SetPropShort",
+        "prefix": "CEntity:SetPropShort(netvar/offset, value)",
+        "body": "CEntity:SetPropShort(${1:Netvar/Offset}, ${2:Value})",
+    },
+    "Sets SetPropDouble" : {
+        "description": "Sets SetPropDouble",
+        "prefix": "CEntity:SetPropDouble(netvar/offset, value)",
+        "body": "CEntity:SetPropDouble(${1:Netvar/Offset}, ${2:Value})",
+    },
+    "Sets SetPropBool" : {
+        "description": "Sets SetPropBool",
+        "prefix": "CEntity:SetPropBool(netvar/offset, value)",
+        "body": "CEntity:SetPropBool(${1:Netvar/Offset}, ${2:Value})",
+    },
+    "Sets SetPropVector" : {
+        "description": "Sets SetPropVector",
+        "prefix": "CEntity:SetPropVector(netvar/offset, value)",
+        "body": "CEntity:SetPropVector(${1:Netvar/Offset}, ${2:Value})",
+    },
+    //CPLAYER
+    "Returns IsEnemy" : {
+        "description": "Returns IsEnemy",
+        "prefix": "CEntity:IsEnemy()",
+        "body": "CEntity:IsEnemy()",
+    },
+    "Returns GetAbsOrigin" : {
+        "description": "Returns GetAbsOrigin",
+        "prefix": "CEntity:GetAbsOrigin()",
+        "body": "CEntity:GetAbsOrigin()",
+    },
+    "Returns GetAbsAngles" : {
+        "description": "Returns GetAbsAngles",
+        "prefix": "CEntity:GetAbsAngles()",
+        "body": "CEntity:GetAbsAngles()",
+    },
+
+    //attributes
+    "Returns IsVisible" : {
+        "description": "Returns IsVisible",
+        "prefix": ["element:IsVisible()"],
+        "body": "element:IsVisible()",
+    },
+    "Sets SetVisible" : {
+        "description": "Sets SetVisible",
+        "prefix": ["element:IsVisible(bool)"],
+        "body": "element:IsVisible(${1:Bool})",
+    },
+    "Returns Data from widget" : {
+        "description": "Returns Data from widget",
+        "prefix": [
+            "checkbox:Get()",
+            "slider:Get()",
+            "keybind:Get()",
+            "combo:Get()",
+            "colorpicker:Get()",
+        ],
+        "body": "${1:Variable containing the widget}:Get()",
+    },
+    "Returns Data from widget for MultiCombo" : {
+        "description": "Returns Data from widget",
+        "prefix": [
+            "multicombo:Get()"
+        ],
+        "body": "${1:Variable containing the widget}:Get(${1:Element})",
+    },
+    //attributes : retardation incoming
+    "Set checkbox state" : {
+        "description": "Set checkbox state",
+        "prefix": [
+            "checkbox:Set()"
+        ],
+        "body": "${1:Variable containing the widget}:Set(${1:Bool})",
+    },
+    "Set slider value" : {
+        "description": "Set slider value",
+        "prefix": [
+            "slider:Set()"
+        ],
+        "body": "${1:Variable containing the widget}:Set(${1:Value})",
+    },
+    "Set keybind value" : {
+        "description": "Set keybind value",
+        "prefix": [
+            "slider:Set()"
+        ],
+        "body": "${1:Variable containing the widget}:Set(${1:VK (Virtual key)})",
+    },
+    "Set combo value" : {
+        "description": "Set combo value",
+        "prefix": [
+            "combo:Set()"
+        ],
+        "body": "${1:Variable containing the widget}:Set(${1:Value})",
+    },
+    "Set multicombo value" : {
+        "description": "Set multicombo value",
+        "prefix": [
+            "multicombo:Set()"
+        ],
+        "body": "${1:Variable containing the widget}:Set(${1:Element}, ${2:Value})",
+    },
+    "Set colorpicker value" : {
+        "description": "Set colorpicker value",
+        "prefix": [
+            "colorpicker:Set()"
+        ],
+        "body": "${1:Variable containing the widget}:Set(${1:Color})",
+    },
+    "Sets function for button" : {
+        "description": "Sets function for button",
+        "prefix": "button:SetFunction(function)",
+        "body": "${1:Variable containing the widget}:SetFunction(${1:function})"
+    },
+    //slider stuff
+    "Returns slider minvalue" : {
+        "description": "Returns slider minvalue",
+        "prefix": [
+            "slider:GetMin()"
+        ],
+        "body": "${1:Variable containing the widget}:GetMin()",
+    },
+    "Set slider minvalue" : {
+        "description": "Set slider minvalue",
+        "prefix": [
+            "slider:SetMin(value)"
+        ],
+        "body": "${1:Variable containing the widget}:SetMin(${1:Value})",
+    },
+    "Returns slider maxvalue" : {
+        "description": "Returns slider maxvalue",
+        "prefix": [
+            "slider:GetMax()"
+        ],
+        "body": "${1:Variable containing the widget}:GetMax()",
+    },
+    "Set slider maxvalue" : {
+        "description": "Set slider maxvalue",
+        "prefix": [
+            "slider:SetMax(value)"
+        ],
+        "body": "${1:Variable containing the widget}:SetMax(${1:Value})",
+    }, 
+    "Returns slider GetFormat()" : {
+        "description": "Returns slider GetFormat()",
+        "prefix": [
+            "slider:GetFormat()"
+        ],
+        "body": "${1:Variable containing the widget}:GetFormat()",
+    }, 
+    "Set slider format" : {
+        "description": "Set slider format",
+        "prefix": [
+            "slider:SetFromat()"
+        ],
+        "body": "${1:Variable containing the widget}:SetFormat(${1:format})",
+    }, 
+    //multicombo stuff
+    "Get by label multicombo" : {
+        "description": "Get by label multicombo",
+        "prefix": [
+            "multicombo:GetByLabel('label')"
+        ],
+        "body": "${1:Variable containing the widget}:GetByLabel('${1:label}')",
+    }, 
+    "Set by label multicombo" : {
+        "description": "Set by label multicombo",
+        "prefix": [
+            "multicombo:SetByLabel('label', value)"
+        ],
+        "body": "${1:Variable containing the widget}:SetByLabel('${1:label}', ${2:Value})",
+    }, 
+    //Convars
+    "Find a variable" : {
+        "description": "Find a variable",
+        "prefix": "Convars.FindVar('Var')",
+        "body": "Convars.FindVar('${1:Var}')"
+    },
+    "Returns GetString" : {
+        "description": "Returns GetString",
+        "prefix": "convar:GetString()",
+        "body": "convar:GetString()"
+    },
+    "Returns GetFloat" : {
+        "description": "Returns GetFloat",
+        "prefix": "convar:GetFloat()",
+        "body": "convar:GetFloat()"
+    },
+    "Returns GetInt" : {
+        "description": "Returns GetInt",
+        "prefix": "convar:GetInt()",
+        "body": "convar:GetInt()"
+    },
+    "Sets setValueString" : {
+        "description": "Sets setValueString",
+        "prefix": "convar:setValueString('value')",
+        "body": "convar:setValueString('${1:Value}')"
+    },
+    "Sets SetValueFloat" : {
+        "description": "Sets SetValueFloat",
+        "prefix": "convar:SetValueFloat(number)",
+        "body": "convar:SetValueFloat(${1:number})"
+    },
+    "Sets SerValueInt" : {
+        "description": "Sets SerValueInt",
+        "prefix": "convar:SerValueInt(number)",
+        "body": "convar:SerValueInt(${1:number})"
+    },
+    //input????
+
+
+    //utils
+    "Utils CreateInterface" : {
+        "description": "Utils CreateInterface",
+        "prefix": "Utils.CreateInterface('module', 'interfacename')",
+        "body": "Utils.CreateInterface('${1:Module}','${2:Interface Name}')"
+    },
+    "Utils FindSignature" : {
+        "description": "Utils FindSignature",
+        "prefix": "Utils.FindSignature('module', 'signature')",
+        "body": "Utils.FindSignature('${1:Module}','${2:signature}')"
+    },
+    //trace
+    "Trace TraceLine" : {
+        "description": "Trace TraceLine",
+        "prefix": "Trace.TraceLine(skipEntityIndex, mask, Vector start, Vector end)",
+        "body": "Trace.TraceLine(${1:skipEntityIndex}, ${2:mask}, ${3:(Vector) start}, ${4:(Vector) end})",
+    },
+    "Returns vecEnd" : {
+        "description": "Returns vecEnd",
+        "prefix": "Trace.vecEnd",
+        "body": "Trace.vecEnd",
+    },
+    "Returns flFraction" : {
+        "description": "Returns flFraction",
+        "prefix": "Trace.flFraction",
+        "body": "Trace.flFraction",
+    },
+    "Returns iContents" : {
+        "description": "Returns iContents",
+        "prefix": "Trace.iContents",
+        "body": "Trace.iContents",
+    },
+    "Returns bAllSolid" : {
+        "description": "Returns bAllSolid",
+        "prefix": "Trace.bAllSolid",
+        "body": "Trace.bAllSolid",
+    },
+    "Returns bStartSolid" : {
+        "description": "Returns bStartSolid",
+        "prefix": "Trace.bStartSolid",
+        "body": "Trace.bStartSolid",
+    },
+    "Returns iHitGroup" : {
+        "description": "Returns iHitGroup",
+        "prefix": "Trace.iHitGroup",
+        "body": "Trace.iHitGroup",
+    },
+    "Returns iHitbox" : {
+        "description": "Returns iHitbox",
+        "prefix": "Trace.iHitbox",
+        "body": "Trace.iHitbox",
+    },
+    "Returns fDispFlags" : {
+        "description": "Returns fDispFlags",
+        "prefix": "Trace.fDispFlags",
+        "body": "Trace.fDispFlags",
+    },
+
+    //playerlist
+    "Returns GetPlayerSettings" : {
+        "description": "Returns GetPlayerSettings",
+        "prefix": "PlayerList.GetPlayerSettings(entityIndex)",
+        "body": "PlayerList.GetPlayerSettings(${1:entityIndex})",
+    },
+    "Returns IsRagebotWhitelisted" : {
+        "description": "Returns IsRagebotWhitelisted",
+        "prefix": "playerListEntity:IsRagebotWhitelisted()",
+        "body": "playerListEntity:IsRagebotWhitelisted()",
+    },
+    "Returns SetRagebotWhitelist" : {
+        "description": "Returns SetRagebotWhitelist",
+        "prefix": "playerListEntity:SetRagebotWhitelist(bool)",
+        "body": "playerListEntity:SetRagebotWhitelist(${1:Bool})",
+    },
+    "Returns IsOverridingResolver" : {
+        "description": "Returns IsOverridingResolver",
+        "prefix": "playerListEntity:IsOverridingResolver()",
+        "body": "playerListEntity:IsOverridingResolver()",
+    },
+    "Returns ToggleResolverOverride" : {
+        "description": "Returns ToggleResolverOverride",
+        "prefix": "playerListEntity:ToggleResolverOverride(bool)",
+        "body": "playerListEntity:ToggleResolverOverride(${1:Bool})",
+    },
+    "Returns SetCustomResolveYaw" : {
+        "description": "Returns SetCustomResolveYaw",
+        "prefix": "playerListEntity:SetCustomResolveYaw(yaw)",
+        "body": "playerListEntity:SetCustomResolveYaw(${1: Yaw (-58 +58)})",
+    },
 }
