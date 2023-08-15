@@ -2,7 +2,8 @@
   "name": "ryzex-api",
   "displayName": "RyzeX api",
   "description": "Made to help the developers for RyzeX ",
-  "version": "0.0.1",
+  "publisher": "marci1175",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.81.0"
   },
