@@ -10,39 +10,88 @@
             "'$CURRENT_YEAR $CURRENT_MONTH $CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND'",
         ]
     },
-    "if the Menu is opened : BOOL" :{
-        "description": "Returns bool, whether if the Menu is opened",
-        "prefix": [
-            "IsOpened",
-        ],
-        "body": "menu.IsOpened",
+    "Creates a button which returns it state : BOOL" : {
+        "description": "Creates a button which returns it state",
+        "prefix": "",
+        "body": "Menu.AddButton('${1:Label}', ${2:Function})",
     },
     "Adds a checkbox interface to menu : BOOL " : {
         "description": "Adds a checkbox interface to menu",
         "prefix": [
-            "AddCheckbox",
+            "AddCheckbox()",
         ],
         "body": "Menu.AddCheckbox('${1:Label}', '${2:Variablename}', false)"
     },
     "creates a slider in the ui : INT" : {
         "description": "Returns an int and creates a slider in the ui",
-        "prefix": ["Slider", "Sliderint"],
+        "prefix": ["Sliderint()"],
         "body": "Menu.AddSliderInt('${1:Label}','${2:Variablename}',${3:MinVal}, ${4:MaxVal})"
     },
     "creates a slider in the ui : FLOAT" : {
         "description": "Returns an float and creates a slider in the ui",
-        "prefix": ["Slider", "Sliderfloat"],
+        "prefix": ["Sliderfloat()"],
         "body": "Menu.AddSliderInt('${1:Label}','${2:Variablename}',${3:MinVal}, ${4:MaxVal})"
     },
     "Creates bind prompt returns : BOOL" : {
         "description": "Creates bind prompt",
-        "prefix": ["AddKeybind","Keybind"],
+        "prefix": ["AddKeybind()"],
         "body" : "Menu.AddKeybind('${1:Label}', '${2:Variablename}', 0, 1)"
     },
-    "Creates combobox : BOOL" : {
+    "Creates Combo : INT" : {
         "description": "Creates combobox",
-        "prefix": ["ComboBox", "Combo"],
+        "prefix": ["Combo()"],
         "body": "Menu.AddCombo('${1:Label}', '${2:Variablename}', {'${3:Element}'}, 0)"
     },
+    "Creates MultiCombo : BOOL" : {
+        "description": "Creates multicombo box",
+        "prefix": ["MutliCombo()"],
+        "body": "Menu.AddMultiCombo('${1:Label}', '${2:Variablename}', {'${3:Element}'}, {${4:DefualtPos})"
+    },
+    "Creates Color picker : COLOR(r, g, b, opacity)" :{
+        "description": "Creates Color picker",
+        "prefix": ["AddColorPicker()"],
+        "body": "Menu.AddColorPicker('${1:Label}', '${2:Variablename}', Color(255, 255, 255, 255))"
+    },
+    "If a button is clicked / pressed this function is called" : {
+        "description": "If a button is clicked / pressed",
+        "prefix": ["OnButtonPress()"],
+        "body": ["function OnButtonPress()","${1}","end"]
+    },
+    "This function is called when the script is unloaded" : {
+        "description": "This function is called when the script is unloaded",
+        "prefix": "OnUnload()",
+        "body": ["function OnUnload()","${1}","end"]
+    },
+    "This function is called when the script gets drawn" : {
+        "description": "This function is called when the script gets drawn",
+        "prefix": "OnDraw()",
+        "body": ["function OnUnload()","${1}","end"]
+    },
+    "This function is called before prediction" : {
+        "description": "This function is called before prediction",
+        "prefix": "OnPrePrediction()",
+        "body": ["function OnPrePrediction()","${1}","end"]
+    },
+    "This function is called on prediction" : {
+        "description": "This function is called on prediction",
+        "prefix": "OnPrediction()",
+        "body": ["function OnPrediction()","${1}","end"]
+    },
+    "OnCreatemove" : {
+        "description": "",
+        "prefix": "OnCreatemove()",
+        "body": ["function OnCreatemove()","${1}","end"]
+    },
+    "OnFrameStageNotify" : {
+        "description": "OnFrameStageNotify",
+        "prefix": "OnFrameStageNotify()",
+        "body": ["function OnFrameStageNotify()","${1}","end"]
+    },
+    "Makes a callback" : {
+        "description": "Makes a callback",
+        "prefix": "Callbacks",
+        "body": "Callbacks.Add('${1:Name}',${1:FunctionName})",
+    }
     
+
 }
