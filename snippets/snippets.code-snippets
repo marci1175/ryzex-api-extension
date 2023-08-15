@@ -128,7 +128,47 @@
         ]
     },
     //config
-    
+    "Returns config Getbool" : {
+        "description": "Returns Getbool",
+        "prefix": "Vars.GetBool('ConfigName')",
+        "body": "Vars.GetBool('${1:ConfigName}')"
+    },
+    "Returns config GetFloat" : {
+        "description": "Returns GetFloat",
+        "prefix": "Vars.GetFloat('ConfigName')",
+        "body": "Vars.GetFloat('${1:ConfigName}')"
+    },
+    "Returns config GetInt" : {
+        "description": "Returns GetInt",
+        "prefix": "Vars.GetInt('ConfigName')",
+        "body": "Vars.GetInt('${1:ConfigName}')"
+    },
+    "Returns config GetString" : {
+        "description": "Returns GetString",
+        "prefix": "Vars.GetString('ConfigName')",
+        "body": "Vars.GetString('${1:ConfigName}')"
+    },
+    "Returns config Setbool" : {
+        "description": "Returns Setbool",
+        "prefix": "Vars.SetBool('ConfigName')",
+        "body": "Vars.SetBool('${1:ConfigName}')"
+    },
+    "Returns config SetFloat" : {
+        "description": "Returns SetFloat",
+        "prefix": "Vars.SetFloat('ConfigName')",
+        "body": "Vars.SetFloat('${1:ConfigName}')"
+    },
+    "Returns config SetInt" : {
+        "description": "Returns SetInt",
+        "prefix": "Vars.SetInt('ConfigName')",
+        "body": "Vars.SetInt('${1:ConfigName}')"
+    },
+    "Returns config SetString" : {
+        "description": "Returns GetString",
+        "prefix": "Vars.SetString('ConfigName')",
+        "body": "Vars.SetString('${1:ConfigName}')"
+    },
+
 
 
 
