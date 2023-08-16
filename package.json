@@ -3,7 +3,7 @@
   "displayName": "RyzeX api",
   "description": "Made to help the developers for RyzeX ",
   "publisher": "marci1175",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "engines": {
     "vscode": "^1.70.0"
   },
