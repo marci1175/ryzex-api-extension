@@ -110,6 +110,7 @@
             "--[[",
             "Unload",
             "Draw",
+            "Event",
             "Pre-Prediction   (return usercmd in the function argument)",
             "Prediction       (return usercmd in the function argument)",
             "Createmove       (return usercmd in the function argument)",
@@ -340,6 +341,11 @@
         "body": "ClientState.GetCommandAck()",
     },
     //engine
+    "Returns GetScreenSize" : {
+        "description": "Returns GetScreenSize",
+        "prefix": "Engine.GetScreenSize()",
+        "body": "Engine.GetScreenSize()",
+    },
     "Returns GetViewAngles" : {
         "description": "Returns GetViewAngles",
         "prefix": "Engine.GetViewAngles()",
@@ -490,12 +496,12 @@
     "Draws DrawLine" : {
         "description": "Draws DrawLine",
         "prefix": "Render.DrawLine(Vector2D from, Vector2D to, Color color))",
-        "body": "PlayerInfo.DrawLine(${1:From}, ${2:To}, ${3:(255,255,255,255)})",
+        "body": "Render.DrawLine(${1:From}, ${2:To}, ${3:(255,255,255,255)})",
     },
     "Draws DrawString" : {
         "description": "Draws DrawString",
         "prefix": "Render.DrawString(Vector2D position, bool shouldCenter, 'Text')",
-        "body": "PlayerInfo.DrawString(${1:Position}, ${2:Shouldcenter (bool) }, ${3:Text})",
+        "body": "Render.DrawString(${1:Position}, ${2:Shouldcenter (bool) }, ${3:(255,255,255,255)}), ${4:Text})",
     },
     //print
     "Prints to console" : {
@@ -660,11 +666,6 @@
         ],
         "body": "${1}:Set(${2:Bool})",
     },
-    "test" : {
-        "description": "dets",
-        "prefix": "test",
-        "body": "asfasdf ${1} asddfsd"
-    },
     "Set slider value" : {
         "description": "Set slider value",
         "prefix": [
@@ -675,9 +676,36 @@
     "Set keybind value" : {
         "description": "Set keybind value",
         "prefix": [
-            ":slider:Set()"
+            ":keybind:Set()"
         ],
         "body": "${1}:Set(${2:VK (Virtual key)})",
+    },
+    "Set keybind state" : {
+        "description": "Set keybind state",
+        "prefix": [
+            ":keybind:SetKeyMode()"
+        ],
+        "body": "${1}:SetKeyMode()",
+    },
+    "Show keybind states" : {
+        "description": "Set keybind state",
+        "prefix": [
+            "eKeybindstates"
+        ],
+        "body": [
+            "--[[",
+            "1 (Hold)",
+            "2 (Toggle)",
+            "3 (Always on)",
+            "]]--"
+        ]
+    },
+    "Returns whether if bind is pressed" : {
+        "description": "Returns whether if bind is pressed",
+        "prefix": [
+            ":keybind:IsActive()"
+        ],
+        "body": "${1}:IsActive()",
     },
     "Set combo value" : {
         "description": "Set combo value",
@@ -801,12 +829,57 @@
     },
     //input????
 
-
+    //ragebot
+    "Returns GetBacktrack" : {
+        "description": "Returns Ragebot_CachedData.GetBacktrack",
+        "prefix": "Ragebot_CachedData.GetBacktrack()",
+        "body": "Ragebot_CachedData.GetBacktrack()",
+    },
+    "Returns GetDamage" : {
+        "description": "Returns Ragebot_CachedData.GetDamage",
+        "prefix": "Ragebot_CachedData.GetDamage()",
+        "body": "Ragebot_CachedData.GetDamage()",
+    },
+    "Returns GetHitbox" : {
+        "description": "Returns Ragebot_CachedData.GetHitbox",
+        "prefix": "Ragebot_CachedData.GetHitbox()",
+        "body": "Ragebot_CachedData.GetHitbox()",
+    },
+    "Returns GetHitChance" : {
+        "description": "Returns Ragebot_CachedData.GetHitChance",
+        "prefix": "Ragebot_CachedData.GetHitChance()",
+        "body": "Ragebot_CachedData.GetHitChance()",
+    },
+    "Returns GetLocalShootPosition" : {
+        "description": "Returns Ragebot_CachedData.GetLocalShootPosition",
+        "prefix": "Ragebot_CachedData.GetLocalShootPosition()",
+        "body": "Ragebot_CachedData.GetLocalShootPosition()",
+    },
+    "Returns GetTarget" : {
+        "description": "Returns Ragebot_CachedData.GetTarget",
+        "prefix": "Ragebot_CachedData.GetTarget()",
+        "body": "Ragebot_CachedData.GetTarget()",
+    },
+    "Returns GetTargetSimulationTime" : {
+        "description": "Returns Ragebot_CachedData.GetTargetSimulationTime",
+        "prefix": "Ragebot_CachedData.GetTargetSimulationTime()",
+        "body": "Ragebot_CachedData.GetTargetSimulationTime()",
+    },
+    "Returns CanShoot" : {
+        "description": "Returns Ragebot_CachedData.CanShoot",
+        "prefix": "Ragebot_CachedData.CanShoot()",
+        "body": "Ragebot_CachedData.CanShoot()",
+    },
     //utils
     "Utils CreateInterface" : {
         "description": "Utils CreateInterface",
         "prefix": "Utils.CreateInterface('module', 'interfacename')",
         "body": "Utils.CreateInterface('${1:Module}','${2:Interface Name}')"
+    },
+    "Utils World to Screen" : {
+        "description": "Utils World to Screen",
+        "prefix": "Utils.WorldToScreen(Vector3D())",
+        "body": "Utils.WorldToScreen('${1:Vector3D()}')"
     },
     "Utils FindSignature" : {
         "description": "Utils FindSignature",
